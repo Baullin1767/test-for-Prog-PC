@@ -178,7 +178,7 @@ public class BuildManager : MonoBehaviour
             Vector3 center = col.bounds.center;
             Vector3 halfExtents = col.bounds.extents;
 
-            Collider[] hits = Physics.OverlapBox(center, halfExtents - Vector3.one * 0.01f, col.transform.rotation, AllMasks);
+            Collider[] hits = Physics.OverlapBox(center, halfExtents - Vector3.one * 0.01f, Quaternion.identity, AllMasks);
             foreach (var hit in hits)
             {
                 if (!hit.transform.IsChildOf(currentGhostObject.transform))
